@@ -1,5 +1,6 @@
 package tpe.generics.use;
 
+import java.util.Stack;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -19,7 +20,8 @@ import de.smits_net.games.framework.sprite.Velocity;
 public class GameBoard extends Board {
 
     /** Münzstapel. */
-    // TODO: Münzen als Stack speichern
+    private Sprite[] stack;
+    private int pos;
 
     /** A moving coin. */
     private Sprite moving;
@@ -42,7 +44,8 @@ public class GameBoard extends Board {
 
         // Münzen anlegen
         for (int i = 0; i < 20; i++) {
-            // TODO: Neue Münzen auf den Stapel legen
+            stack = new Sprite[pos];
+            pos++;
         }
     }
 
@@ -77,7 +80,9 @@ public class GameBoard extends Board {
      */
     @Override
     public synchronized void drawGame(Graphics g) {
-        // TODO: Über alle Objekte im Stapel laufen und sie zeichnen
+        for(int i = 0; i < pos; i++){
+            stack[i] = createCoin();
+        }
 
         if (moving != null) {
             moving.draw(g, this);
@@ -118,10 +123,16 @@ public class GameBoard extends Board {
             points++;
 
             // TODO: Oberstes Sprite vom Stapel entfernen und s zuweisen
+            pop(stack[--pos]);
 
             moving = s;
             moving.setVelocity(new Velocity(0, 20));
         }
+    }
+
+    private void pop(Sprite sprite) {
+        sprite.move();
+        pos--;
     }
 
     /**
@@ -129,12 +140,16 @@ public class GameBoard extends Board {
      */
     @Override
     public boolean updateGame() {
-        
+
         if (moving != null) {
             moving.move();
         }
-        
+
         // TODO: Solange Stapel noch Elemente enthält, true zurückgeben.
-        return true;
+       while(pos != 0){
+            return false;
+       }
+       return true;
+
     }
 }

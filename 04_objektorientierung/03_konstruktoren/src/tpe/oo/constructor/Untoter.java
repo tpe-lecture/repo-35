@@ -3,7 +3,7 @@ package tpe.oo.constructor;
 /**
  * Untoter aus der Horde.
  */
-public class Untoter /* extends Figur */ {
+public class Untoter extends Figur {
 
     /** Standardmäßige Stärke der Fähigkeit zur Unterwasseratmung. */
     public static final int STANDARD_UNTERWASSERATMUNG = 10;

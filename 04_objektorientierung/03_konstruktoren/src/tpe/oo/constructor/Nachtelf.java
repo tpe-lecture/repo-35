@@ -3,7 +3,7 @@ package tpe.oo.constructor;
 /**
  * Nachtelf aus der Allianz.
  */
-public class Nachtelf /* extends Figur */ {
+public class Nachtelf extends Figur {
 
     /** Standardmäßige Stärke der Fähigkeit Naturwiderstand. */
     public static final int STANDARD_NATURWIDERSTAND = 5;
