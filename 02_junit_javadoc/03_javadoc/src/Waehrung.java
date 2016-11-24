@@ -1,16 +1,28 @@
-// TODO: JavaDoc
+/**
+ * Die Klasse arbeitet mit Währung.
+ * @author maria
+ *
+ */
 public class Waehrung {
 
-    // TODO: JavaDoc
+    /**
+     * Erstellt der Kurs.
+     */
     private final int kurs;
 
-    // TODO: JavaDoc
+    /**
+     * Erstellt die Name.
+     */
     private final String name;
 
-    // TODO: JavaDoc
+    /**
+     * Erstellt der Kürzel.
+     */
     private final String kuerzel;
 
-    // TODO: JavaDoc
+    /**
+     * Erstellt der Teiler.
+     */
     private static final long TEILER = 10000;
 
     /**
@@ -26,22 +38,42 @@ public class Waehrung {
         this.kuerzel = kuerzel;
     }
 
-    // TODO: JavaDoc
+
+    /**
+     * Rechnet die Währung um.
+     *
+     * @param betrag der Betrag, der berechnet sein muss.
+     * @param toWaehrung die Währung, auf die es umgerechnet ssein muss
+     * @return der Ergebnis
+     */
     public long umrechnen(long betrag, Waehrung toWaehrung) {
         return betrag * kurs / toWaehrung.kurs;
     }
 
-    // TODO: JavaDoc
+
+    /**
+     * Gibt der aktuelle Kurs.
+     *
+     * @return aktuelle Kurs
+     */
     public int getKurs() {
         return kurs;
     }
-    
-    // TODO: JavaDoc
+
+
+    /**
+     * Gibt der Name.
+     * @return aktuelle Name
+     */
     public String getName() {
         return name;
     }
 
-    // TODO: JavaDoc
+
+    /**
+     * Gibt der Kürzel.
+     * @return Kürzel
+     */
     public String getKuerzel() {
         return kuerzel;
     }

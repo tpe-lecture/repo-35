@@ -20,7 +20,7 @@ public class Wuerfel {
     public static final int D10 = 10;
 
     /** 12-seitiger Würfel. */
-    public static final int D12 = 13;
+    public static final int D12 = 12;
 
     /** Zufallszahlengenerator. */
     private final Random rnd = new Random();

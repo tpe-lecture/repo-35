@@ -42,6 +42,7 @@ public class ComplexNumber {
      * Erzeugt eine neue komplexe Zahl mit einem Imaginär-Anteil von 0.0.
      *
      * @param realAnteil Real-Anteil der Zahl
+     * @param i
      */
     public ComplexNumber(double realAnteil) {
         this(realAnteil, 0.0);
@@ -78,7 +79,7 @@ public class ComplexNumber {
      * @return das Ergebnis der Subtraktion
      */
     public ComplexNumber subtract(ComplexNumber other) {
-        return add(other.multiply(1));
+        return add(other.multiply(-1));
     }
 
     /**

@@ -1,6 +1,7 @@
 package tpe.oo.ueberschreiben;
 
 import java.awt.Point;
+import java.awt.event.MouseEvent;
 
 import de.smits_net.games.framework.board.Board;
 import de.smits_net.games.framework.image.AnimatedImage;
@@ -33,7 +34,7 @@ public class Alien extends AnimatedSprite {
      * Alien explodieren lassen.
      */
     public void explode() {
-        setActive(false);
+        setActive(true);
         setImages(new AnimatedImage(20,
                 new StripedImage("assets/explosion_1.png", 43)));
         setInvisibleAfterFrames(70);
